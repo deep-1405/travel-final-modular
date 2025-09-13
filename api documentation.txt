@@ -1,0 +1,58 @@
+SerpAPI Payload generation:
+
+
+# Common Fields
+	Inputs:
+		User Inputs
+			departure_id
+			arrival_id
+			outbound_date
+			adults (default: 1)
+			children (default: 0)
+		
+		SerpAPI Inputs
+			api_key: '***'
+			engine: 'google_flights'
+			hl: en
+			gl: in
+			currency: INR
+
+-------------------------------
+
+(1)One Way Flights:
+	(i)Flight Listing Departure:
+		Inputs:
+			type: 2
+		Outputs:
+			booking_token: '***'
+
+	(ii)Booking Options:
+		Inputs:
+			type: 2
+			booking_token: '***'
+		Outputs:
+			booking_request: '***'
+
+(2)Round Trip Flights:
+	(i)Flight Listing Go:
+		Inputs:
+			type: 1
+			return_date: YYYY-MM-DD
+		Outputs:
+			departure_token: '***'
+	
+	(ii)Flight Listing Return:
+		Inputs:
+			type: 1
+			return_date: YYYY-MM-DD
+			departure_token: '***'
+		Outputs:
+			booking_token: '***'
+	
+	(iii)Booking Options:
+		Inputs:
+			type: 1
+			return_date: YYYY-MM-DD
+			booking_token: '***'
+		Outputs:
+			booking_request: '***'

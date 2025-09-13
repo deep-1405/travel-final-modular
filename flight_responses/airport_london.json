@@ -1,0 +1,332 @@
+{
+    "meta": {
+        "count": 14,
+        "links": {
+            "self": "https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude=51.5072&longitude=0.1276&radius=200",
+            "next": "https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude=51.5072&longitude=0.1276&radius=200&page%5Boffset%5D=10",
+            "last": "https://test.api.amadeus.com/v1/reference-data/locations/airports?latitude=51.5072&longitude=0.1276&radius=200&page%5Boffset%5D=4"
+        }
+    },
+    "data": [
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "CITY AIRPORT",
+            "detailedName": "LONDON/GB:CITY AIRPORT",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "LCY",
+            "geoCode": {
+                "latitude": 51.50528,
+                "longitude": 0.05528
+            },
+            "address": {
+                "cityName": "LONDON",
+                "cityCode": "LON",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 5,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 8
+                },
+                "travelers": {
+                    "score": 4
+                }
+            },
+            "relevance": 152.72125
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "HEATHROW",
+            "detailedName": "LONDON/GB:HEATHROW",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "LHR",
+            "geoCode": {
+                "latitude": 51.47750,
+                "longitude": -0.46138
+            },
+            "address": {
+                "cityName": "LONDON",
+                "cityCode": "LON",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 40,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 39
+                },
+                "travelers": {
+                    "score": 45
+                }
+            },
+            "relevance": 95.40705
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "GATWICK",
+            "detailedName": "LONDON/GB:GATWICK",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "LGW",
+            "geoCode": {
+                "latitude": 51.15612,
+                "longitude": -0.17805
+            },
+            "address": {
+                "cityName": "LONDON",
+                "cityCode": "LON",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 44,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 27
+                },
+                "travelers": {
+                    "score": 27
+                }
+            },
+            "relevance": 60.11732
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "STANSTED",
+            "detailedName": "LONDON/GB:STANSTED",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "STN",
+            "geoCode": {
+                "latitude": 51.88500,
+                "longitude": 0.23501
+            },
+            "address": {
+                "cityName": "LONDON",
+                "cityCode": "LON",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 42,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 16
+                },
+                "travelers": {
+                    "score": 15
+                }
+            },
+            "relevance": 37.46034
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "LUTON",
+            "detailedName": "LONDON/GB:LUTON",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "LTN",
+            "geoCode": {
+                "latitude": 51.87473,
+                "longitude": -0.36833
+            },
+            "address": {
+                "cityName": "LONDON",
+                "cityCode": "LON",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 53,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 11
+                },
+                "travelers": {
+                    "score": 10
+                }
+            },
+            "relevance": 21.09122
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "BIRMINGHAM",
+            "detailedName": "BIRMINGHAM/GB:BIRMINGHAM",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "BHX",
+            "geoCode": {
+                "latitude": 52.45389,
+                "longitude": -1.74805
+            },
+            "address": {
+                "cityName": "BIRMINGHAM",
+                "cityCode": "BHX",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 166,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 10
+                },
+                "travelers": {
+                    "score": 8
+                }
+            },
+            "relevance": 6.17616
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "SOUTHAMPTON",
+            "detailedName": "SOUTHAMPTON/GB",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "SOU",
+            "geoCode": {
+                "latitude": 50.95028,
+                "longitude": -1.35666
+            },
+            "address": {
+                "cityName": "SOUTHAMPTON",
+                "cityCode": "SOU",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 120,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 4
+                },
+                "travelers": {
+                    "score": 2
+                }
+            },
+            "relevance": 3.49677
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "BRISTOL",
+            "detailedName": "BRISTOL/GB:BRISTOL",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "BRS",
+            "geoCode": {
+                "latitude": 51.38278,
+                "longitude": -2.71916
+            },
+            "address": {
+                "cityName": "BRISTOL",
+                "cityCode": "BRS",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 197,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 7
+                },
+                "travelers": {
+                    "score": 5
+                }
+            },
+            "relevance": 3.28796
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "SOUTHEND",
+            "detailedName": "LONDON/GB:SOUTHEND",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "SEN",
+            "geoCode": {
+                "latitude": 51.57139,
+                "longitude": 0.69556
+            },
+            "address": {
+                "cityName": "LONDON",
+                "cityCode": "LON",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 39,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 1
+                },
+                "travelers": {
+                    "score": 1
+                }
+            },
+            "relevance": 3.00162
+        },
+        {
+            "type": "location",
+            "subType": "AIRPORT",
+            "name": "EAST MIDLANDS",
+            "detailedName": "NOTTINGHAM/GB:EAST MIDLANDS",
+            "timeZoneOffset": "+01:00",
+            "iataCode": "EMA",
+            "geoCode": {
+                "latitude": 52.83112,
+                "longitude": -1.32805
+            },
+            "address": {
+                "cityName": "NOTTINGHAM",
+                "cityCode": "NQT",
+                "countryName": "UNITED KINGDOM",
+                "countryCode": "GB",
+                "regionCode": "EUROP"
+            },
+            "distance": {
+                "value": 177,
+                "unit": "KM"
+            },
+            "analytics": {
+                "flights": {
+                    "score": 4
+                },
+                "travelers": {
+                    "score": 3
+                }
+            },
+            "relevance": 2.28398
+        }
+    ]
+}

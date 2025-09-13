@@ -1,0 +1,20 @@
+with gr.Column(visible=True) as outbound_cards_section:
+                    with gr.Row():
+                        outbound_card_html_components = []
+                        outbound_card_containers = []
+                        for card_index in range(MAX_FLIGHTS):
+                            with gr.Column(elem_classes=["card-container"], visible=False) as card_col:
+                                card_html = gr.HTML("")
+                                card_button = gr.Button("", elem_classes=["click-overlay"])
+                                outbound_card_html_components.append(card_html)
+                                # the button is being binded to function upon click event
+                                card_button.click(
+                                    fn=lambda x=card_index: x,
+                                    outputs=selected_outbound_index
+                                ).then(
+                                    fn=UIManager.update_cards,
+                                    inputs=[selected_outbound_index, outbound_flight_state],
+                                    outputs=outbound_card_html_components
+                                )
+                            outbound_card_containers.append(card_col)
+                    confirm_button = gr.Button("View Flight", interactive=False, elem_id="confirm-button")

@@ -1,0 +1,38 @@
+thread_id_state
+current_view
+initial_flight_payload
+outbound_flights_state
+selected_outbound_index
+return_flights_state
+selected_return_index
+booking_data_state
+----------------------------
+flight_section *
+----------------------------
+outbound_flight_cards *
+outbound_card_html_components
+outbound_card_containers
+outbound_view_flight_button
+----------------------------
+outbound_flight_details *
+outbound_flight_details_box
+outbound_details_go_back_button
+outbound_booking_options_button (type = 2)
+get_return_flights_button (type = 1)
+----------------------------
+return_flight_cards *
+return_card_html_components
+return_card_containers
+return_flights_go_back_button
+return_view_flight_button
+----------------------------
+return_flight_details *
+return_flight_details_box
+return_details_go_back_button
+return_booking_options_button
+----------------------------
+flight_booking_section *
+
+chatbot
+messages
+thread

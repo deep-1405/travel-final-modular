@@ -6,8 +6,13 @@ from dotenv import load_dotenv
 import os
 import json
 from backend.load_data import load_json_data
+from backend.routers.flights import router
+import httpx
+import asyncio
 
 load_dotenv(override=True)
+
+BASE_URL = "http://localhost:8000/api/"
 
 class FlightsInput(BaseModel):
     departure_id: str = Field(description='Departure airport code (IATA)')
@@ -21,7 +26,7 @@ class FlightsInputSchema(BaseModel):
     params: FlightsInput
 
 @tool(args_schema=FlightsInputSchema)
-def get_flights(params: FlightsInput):
+async def get_flights(params: FlightsInput):
     '''
     Find flights using the Google Flights engine via SerpAPI.
 
@@ -33,65 +38,22 @@ def get_flights(params: FlightsInput):
     '''
     # print("FlightsInput:", params.model_dump())
     
-    serpapi_key = os.getenv('SERPAPI_API_KEY')
-    if not serpapi_key:
-        return {"status": 500, "error": "SERPAPI_API_KEY not found in environment variables"}
-
-    # SerpAPI related inputs
-    query_params = {
-        'api_key': serpapi_key,
-        'engine': 'google_flights',
-        'hl': 'en',
-        'gl': 'in',
-        'currency': 'INR'
-    }
-
-    # Use original search params if present, otherwise current params
-    flight_request = getattr(params, "original_params", params)
-
-    # Common fields
-    query_params.update({
-        "departure_id": flight_request.departure_id,
-        "arrival_id": flight_request.arrival_id,
-        "outbound_date": flight_request.outbound_date,
-        "adults": flight_request.adults,
-        "children": flight_request.children,
-    })
-
-    if hasattr(query_params, "type"):
-        query_params["type"] = query_params.type
-    else:
-        query_params["type"] = 1 if params.return_date else 2
-
-    if flight_request.return_date:
-        query_params["return_date"] = flight_request.return_date
-
-    
-    # static
-    # result = {}
-    # if hasattr(params, "departure_token"):
-    #     query_params["departure_token"] = params.departure_token
-    #     print("Getting return flights with departure token:", params.departure_token)
-    #     result = load_json_data("round_return_flights.json")
-    # else:
-    #     print("Getting departure flights")
-    #     result = load_json_data("round_go_flights.json")
-    
-    # print("Flight Booking payload: ")
-    # print(json.dumps(query_params, indent=2))
-    
-    # return result
-
-    # real-time
-    try:
-        search = GoogleSearch(query_params)
-        result = search.get_dict()
-        if "best_flights" not in result and "error" not in result:
-            return {"status": 404, "error": "No flights found for the given parameters"}
-        return result  # Contains 'best_flights' or 'error'
-    except Exception as e:
-        print("SerpAPI Error:", str(e))  # Debug log
-        return {"status": 500, "error": f"Failed to fetch flights: {str(e)}"}
+    async with httpx.AsyncClient(timeout=httpx.Timeout(60.0)) as client:
+        try:
+            response = await client.post(f"{BASE_URL}flights", json={"params": params.model_dump()})
+            response.raise_for_status()
+            result = response.json()
+            return result
+        except httpx.HTTPStatusError as e:
+            print(f"HTTP error occurred: {e.response.status_code}")
+            try:
+                print(f"Error details: {e.response.json()}")
+            except ValueError:
+                print(f"Error text: {e.response.text}")
+                raise
+        except httpx.RequestError as e:
+            print(f"Request error occurred: {e}")
+            raise
 
 class BookingInput(BaseModel):
     booking_token: str = Field(description='Booking token from a flight search result')

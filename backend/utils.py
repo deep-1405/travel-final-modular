@@ -251,3 +251,32 @@ async def fetch_flights(params: dict):
         response = await client.get(url)
         response.raise_for_status()
         return response.json()
+    
+def format_params(params: dict) -> dict:
+    """
+    Convert float values that are whole numbers into ints.
+    Example: 5.0 -> 5
+    """
+    clean_params = {}
+    for k, v in params.items():
+        if isinstance(v, float) and v.is_integer():
+            clean_params[k] = int(v)
+        else:
+            clean_params[k] = v
+    return clean_params
+
+def merge_flights_fields(data: dict):
+    # If input is a JSON string, parse it
+    # if isinstance(json_data, str):
+    #     data = json.loads(json_data)
+    # else:
+    #     data = json_data.copy()  # Work with a copy to avoid modifying original
+
+    if 'best_flights' in data and 'other_flights' in data:
+        # Combine the two fields into a new 'flights' field
+        data['flights'] = data['best_flights'] + data['other_flights']
+        # Remove the original fields
+        del data['best_flights']
+        del data['other_flights']
+    
+    return data

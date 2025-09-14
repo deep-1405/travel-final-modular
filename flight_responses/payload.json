@@ -1,0 +1,8 @@
+{
+    "departure_id": "AMD",
+    "arrival_id": "LHR",
+    "outbound_date": "2025-09-20",
+    "return_date": "2025-09-25",
+    "adults": 1,
+    "children": 1
+}
